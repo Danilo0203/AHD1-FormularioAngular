@@ -1,0 +1,92 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+  color: black;
+}
+button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+button,
+button span {
+  transition: 200ms;
+}
+
+button .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+
+button .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button svg {
+  width: 15px;
+  fill: #eee;
+}
+
+button:hover {
+  background: #ff3636;
+}
+
+button:hover .text {
+  color: transparent;
+}
+
+button:hover .icon {
+  width: 50px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active .icon svg {
+  transform: scale(0.8);
+}

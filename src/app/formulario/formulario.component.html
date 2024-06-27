@@ -1,0 +1,96 @@
+<form class="form" [formGroup]="registroFormulario" (ngSubmit)="enviar()">
+  <p class="title">Registro</p>
+  <div class="flex">
+    <div class="error">
+      <label>
+        <input
+          required=""
+          placeholder=""
+          type="text"
+          class="input"
+          formControlName="nombre"
+        />
+        <span>Nombre</span>
+      </label>
+      @if(this.registroFormulario.get("nombre")?.errors?.["required"]){
+      <p>Este campo es requerido</p>
+      } @if(this.registroFormulario.get("nombre")?.errors?.["minlength"]){
+      <p>Minimo 3 caracteres</p>
+      }
+    </div>
+
+    <div class="error">
+      <label>
+        <input
+          required=""
+          placeholder=""
+          type="text"
+          class="input"
+          formControlName="apellido"
+        />
+        <span>Apellidos</span>
+      </label>
+      @if(this.registroFormulario.get("apellido")?.errors?.["required"]){
+      <p>Este campo es requerido</p>
+      } @if(this.registroFormulario.get("apellido")?.errors?.["minlength"]){
+      <p>Minimo 5 caracteres</p>
+      }
+    </div>
+  </div>
+
+  <div class="error">
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="email"
+        class="input"
+        formControlName="correo"
+      />
+      <span>Email</span>
+    </label>
+    @if(this.registroFormulario.get("correo")?.errors?.["required"]){
+    <p>Este campo es requerido</p>
+    } @if(this.registroFormulario.get("correo")?.errors?.["email"]){
+    <p>Debe de ser un correo valido</p>
+    }
+  </div>
+
+  <div class="error">
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="password"
+        class="input"
+        formControlName="password"
+      />
+      <span>Contraseña</span>
+    </label>
+    @if(this.registroFormulario.get("password")?.errors?.["required"]){
+    <p>Este campo es requerido</p>
+    } @if(this.registroFormulario.get("password")?.errors?.["minLength"]){
+    <p>Debe de ser un correo valido</p>
+    } @if(this.registroFormulario.get("password")?.errors?.["pattern"]){
+    <p>Debe contener al menos un número y un carácter especial</p>
+    }
+  </div>
+  <div class="error">
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="password"
+        class="input"
+        formControlName="confirmPassword"
+      />
+      <span>Confirmar contraseña</span>
+    </label>
+    @if(this.registroFormulario.get("confirmPassword")?.errors?.["required"]){
+    <p>Este campo es requerido</p>
+    } @if(this.registroFormulario.errors?.['passwordMismatch']){
+    <p>Las contraseñas no coinciden</p>
+    }
+  </div>
+  <button class="submit" type="submit">Guardar</button>
+</form>
