@@ -2,7 +2,7 @@
 [build]
   command = "ng build"
   functions = "netlify/functions"
-  publish = "dist/AHD1/browser"
+  publish = "dist/AHD1-FormularioAngular/browser"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
